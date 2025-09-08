@@ -1,1 +1,61 @@
+1. Major Modules/Subsystems
 
+a. User Management & Authentication Module
+
+Handles secure login of university staff and faculty using university credentials.
+
+Interfaces with the University Authentication Server to validate login attempts.
+
+Ensures user data and credentials are encrypted and protected.
+
+b. Ticket Management Module
+
+Allows users to create, submit, and classify support tickets (network, hardware, software, account, etc.).
+
+Provides status tracking, ticket prioritization (FIFO or admin override), and notification updates.
+
+Supports searching tickets by ID, department, issue type, or status.
+
+c. MIS Dashboard & Knowledge Base Module
+
+Provides MIS staff with tools to assign, resolve, and update tickets.
+
+Stores solutions into a searchable knowledge base for recurring problems.
+
+Generates reports (ticket volume, resolution time, recurring issues) for decision-making and continuous improvement.
+
+2. External Systems/Interfaces
+
+University Authentication Server (API/Service) → Used for verifying staff/faculty credentials during login.
+
+Notification Services (Email/SMS Gateway, In-App Messaging API) → Sends updates to users regarding ticket progress.
+
+Database (SQL) → Stores tickets, user profiles, solutions, and reports data securely.
+
+3. Data Flow Summary
+
+Login & Authentication
+
+Users (faculty/staff) submit login credentials → forwarded to the University Authentication Server.
+
+The server validates credentials and returns an authentication result to the system.
+
+Ticket Submission & Processing
+
+Authenticated users create tickets with issue details.
+
+The system classifies and queues tickets (FIFO by default, with admin override possible).
+
+MIS Office views ticket queues via the dashboard, assigns them to staff, and updates resolutions.
+
+Knowledge Base & Notifications
+
+When a ticket is resolved, MIS staff record solutions in the knowledge base for future reference.
+
+Users are notified (in-app, SMS, or email) about ticket status and resolution.
+
+Reporting & Monitoring
+
+The system compiles ticket data into reports for the MIS office.
+
+Reports highlight trends (volume, resolution times, recurring problems) to support decision-making.
