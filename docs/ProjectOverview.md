@@ -17,3 +17,13 @@ conveniently report issues anytime without the need for manual forms or follow-u
 STAKEHOLDERS: MIS OFFICE and MinSU CLINIC
 
 TOOLS/TECHNOLOGIES: Laravel, Laragon, PHP
+
+
+## Integration Pattern Applied
+The TeamKasalo system uses thHub-Spoke integration pattern.
+
+### Rationale
+All system communications are centralized in the Ticket Management Core (Hub). This reduces interdependencies between modules, making the system easier to scale and maintain. The hub ensures consistent workflows for ticket reporting, resolution, and user notifications.
+
+### Diagram Reference
+![High-Level Architecture](HighLevelArch.png)
