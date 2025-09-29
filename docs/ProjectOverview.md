@@ -27,3 +27,19 @@ All system communications are centralized in the Ticket Management Core (Hub). T
 
 ### Diagram Reference
 ![High-Level Architecture](HighLevelArch.png)
+
+
+## Messaging Workflow
+
+We implemented an **in-memory message queue** to enable asynchronous communication between the User and MIS Officer modules.
+
+### How it works:
+1. **Producer (User Module):** When users submit tickets, they're added to a shared queue instead of being processed immediately.
+2. **Queue:** Acts as a buffer, storing tickets until the MIS Officer is ready to process them.
+3. **Consumer (MIS Module):** Continuously monitors the queue and processes tickets one by one, automatically assigning them based on priority.
+
+### Benefits:
+- **Decoupling:** User submission and ticket processing are independent
+- **Scalability:** Multiple MIS Officers could be added as consumers
+- **Reliability:** Tickets won't be lost if MIS system is busy
+- **Performance:** Users get immediate feedback without waiting for processing
