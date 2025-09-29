@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "13a7bac8-1ba8-4776-822a-6ae36c75d9f2",
+		"name": "MismoAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47697337",
+		"_collection_link": "https://jadeabegaild-45794.postman.co/workspace/Jade-Abegail-Datinguinoo's-Work~09ebcf87-d197-469d-870f-9359182e9497/collection/47697337-13a7bac8-1ba8-4776-822a-6ae36c75d9f2?action=share&source=collection_link&creator=47697337"
+	},
+	"item": [
+		{
+			"name": "issues",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/issues",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"issues"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "issues",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 1,\r\n  \"name\": \"Cedric\",\r\n  \"position\":\"Faculty from CTE\",\r\n  \"concern\": \"Leaking faucet in restroom\",\r\n  \"status\":\"ongoing\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/issues",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"issues"
+					],
+					"query": [
+						{
+							"key": "Content-Type",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tickets",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "tickets",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 3,\r\n    \"issuedId\": 1,\r\n    \"assignedOfficer\": \"Neil Echanova\",\r\n    \"priority\": \"low\",\r\n    \"status\": \"in-progress\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tickets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tickets"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
